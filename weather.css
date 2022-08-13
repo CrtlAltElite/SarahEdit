@@ -1,0 +1,32 @@
+#form{
+    width: 60%;
+}
+body{
+    background-color: black;
+}
+button{
+    align-self: flex-end;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: radial-gradient(circle,  rgba(255,251,133,0.9) 38%, rgba(0,212,255,0.9) 100%);
+  }
+
+  .weather {
+    align-items: center;
+    margin: 15px 0;
+    font-size: small;
+  }
+  h2 {
+    font-size: large;
+  }
+
+.clock {
+   margin-top: 10%;
+    
+}
