@@ -1,32 +1,42 @@
 #form{
-    width: 60%;
+    width: 65%;
+    align-items: center;
+    margin-top: 5%;
+    
+    
 }
-body{
+body {
     background-color: black;
+    background-size: stretch;
+    font-size: larger;
+}
+.newbody{
+    align-items: center;
+
+    height: 90vh;
 }
 button{
     align-self: flex-end;
+
+    
+}
+.row{
+    justify-content: space-evenly;
+    
+}
+p{
+    font-size: x-large;
+    font-weight: bold;
 }
 
-.container {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: radial-gradient(circle,  rgba(255,251,133,0.9) 38%, rgba(0,212,255,0.9) 100%);
-  }
 
-  .weather {
-    align-items: center;
-    margin: 15px 0;
-    font-size: small;
-  }
-  h2 {
-    font-size: large;
-  }
+
+  
+
 
 .clock {
-   margin-top: 10%;
+   
+   color: white;
+   align-items: center;
     
 }

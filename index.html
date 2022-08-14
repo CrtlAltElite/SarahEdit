@@ -20,35 +20,36 @@
     <link rel="stylesheet" href="weather.css">
     <title>Weather</title>
 </head>
-
 <body>
-    <div class="container">
-        <div>
-            <form class="mb-3" id="form">
-                <label for="exampleFormControlInput1" class="form-label">Enter City Name</label>
-                <input type="text" class="form-control" id="city">
-                <button type="submit" class="btn btn-info">Search</button>
-            </form>
-            <div id="icon"></div>
-            <div class="weather">
-                <div>
-                    <h2 class="high">High</h2>
-                    <p id="high"></p>
-                </div>
-                <div>
+    <div class="row">
+        <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+        <form class="flex-lg-row" id="form">
+            <input type="text" class="flex-lg-row" id="city" placeholder="City">
+            <input type="text" class="flex-lg-row" id="country" placeholder="State/Country">
+            <button type="submit" class="btn  btn-outline-dark">Search</button>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <h2 class="humidity">Humidity</h2>
+            <p id="humidity"></p>
+        </div>
+        <div class="col-md-3" id="first">
+                <h2 class="high">High</h2>
+                <p id="high"></p>
+            </div>
+                <div class="col-md-3">
                     <h2 class="low">Low</h2>
                     <p id="low"></p>
-                </div>
-                <div>
+                    
+            </div>
+
+            <div class="col-md-2" id="second">
                     <h2 class="forcast">Forcast</h2>
                     <p id="forcast"></p>
-                </div>
-                <div>
-                    <h2 class="humidity">Humidity</h2>
-                    <p id="humidity"></p>
+                    <div id="icon"></div>
                 </div>
             </div>
-            <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
         </div>
     </div>
 </body>
