@@ -1,6 +1,6 @@
 
 
-const KEY = "68232441021bf3bde59a8e821d928075";
+const KEY ="";
 
 const getWeather = async(city,key) => {
     try {
