@@ -2,6 +2,7 @@
 
 const KEY = "api key";
 
+
 const getWeather = async(city,country,key) => {
     try {
    const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${key}`)
