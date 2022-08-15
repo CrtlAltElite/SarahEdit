@@ -1,18 +1,17 @@
 
 
-const KEY = "api key";
 
 
-const getWeather = async(city,country,key) => {
+async function getWeather(city, country) {
     try {
-   const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=${key}`)
-   console.log(response.data);
-   showWeather(response.data);
-  
-} catch (error) {
-    console.error(error);
-  }
-};
+        const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=68232441021bf3bde59a8e821d928075`);
+        console.log(response.data);
+        showWeather(response.data);
+
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 //getWeather('canon', KEY)
 
@@ -41,9 +40,9 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     let city = document.getElementById('city');
     let country = document.getElementById('country')
-    let key = KEY
+  
     console.log(city.value,country.value);
-    getWeather(city.value,country.value,key)
+    getWeather(city.value,country.value)
 });
 
 function showTime(){
