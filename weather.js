@@ -2,9 +2,10 @@
 
 
 
-async function getWeather(city, country) {
+async function getWeather(city) {
     try {
-        const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=imperial&appid=68232441021bf3bde59a8e821d928075`);
+        const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=9a67ef8ff2feec94b5987d22521e868d
+        `);
         console.log(response.data);
         showWeather(response.data);
 
@@ -23,12 +24,15 @@ function showWeather(data){
     let humidity = data.main.humidity
     let icon= data.weather[0].icon
     console.log(icon)
-   
+    document.getElementsByClassName("results")[0].style.display="block"
+    document.getElementById("cname").innerHTML=data.name
+    document.getElementById("current").innerHTML=data.main.temp+ ' &#176;F'
+
     document.getElementById("high").innerHTML=high + ' &#176;F'
     document.getElementById("low").innerHTML=low + ' &#176;F'
     document.getElementById("forcast").innerHTML=forcast
     document.getElementById("humidity").innerHTML=humidity+ "%"
-    document.getElementById("icon").innerHTML=`<img src=http://openweathermap.org/img/wn/${icon}@2x.png>`
+    document.getElementById("icon").innerHTML=`<img src=https://openweathermap.org/img/wn/${icon}@2x.png>`
    // iconImg.src = iconUrl;
 
 }
@@ -36,13 +40,11 @@ function showWeather(data){
 
 const form = document.querySelector('#form')
 form.addEventListener('submit', (event) => {
-    console.log("here i am")
+    console.log('clicked')
     event.preventDefault();
     let city = document.getElementById('city');
-    let country = document.getElementById('country')
-  
-    console.log(city.value,country.value);
-    getWeather(city.value,country.value)
+    console.log(city.value);
+    getWeather(city.value)
 });
 
 function showTime(){
@@ -69,14 +71,15 @@ function showTime(){
     s = (s < 10) ? "0" + s : s;
     
     let time = h + ":" + m + ":" + s + " " + session;
-    let dates = "Todays date: "+ mm+"/"+dd+"/"+year + " ";
-    document.getElementById("MyClockDisplay").innerText = time + dates;
-    document.getElementById("MyClockDisplay").textContent = dates +"  "+ time;
-    if (session ==="AM"){
-        document.body.style.background = 'url("https://res.cloudinary.com/dxfkurrkj/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1660447680/Weather-App_efarrx.png")';
-    }else{
-        document.body.style.background = 'url("https://res.cloudinary.com/dxfkurrkj/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1660448960/cloud-sky-beautiful-cartoon-background-night-sky-with-colorful-clouds-flat-poster-or-flyer-cloudscape-panorama-700-178471967_e9ceq4.jpg")';
-    }
+    let dates = mm+"/"+dd+"/"+year + " ";
+    const mcd=document.getElementById("MyClockDisplay")
+    mcd.innerHTML = time +"<br>" + dates;
+    mcd.style.fontSize="large"
+    mcd.style.fontWeight="bold"
+    mcd.style.position="fixed"
+    mcd.style.top="1em"
+    mcd.style.right="0em"
+
     
     setTimeout(showTime, 1000);
     
